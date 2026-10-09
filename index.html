@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Crea idee e didascalie per i social in pochi secondi con PostPilot.">
+<title>PostPilot — Idee social in pochi secondi</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2e;--panel2:#18233d;--text:#f4f7ff;--muted:#aab5ce;--accent:#9df2c3;--accent2:#b8a6ff;--line:#2a3652}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#1d3150 0,transparent 42%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+.wrap{width:min(1080px,92%);margin:auto}.nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}.brand{font-weight:850;font-size:1.2rem;letter-spacing:-.04em}.brand span{color:var(--accent)}.nav a{color:var(--muted);text-decoration:none;font-size:.94rem}
+.hero{padding:60px 0 36px;text-align:center}.pill{display:inline-block;border:1px solid #355447;color:var(--accent);border-radius:99px;padding:6px 12px;font-size:.82rem}.hero h1{font-size:clamp(2.5rem,7vw,4.8rem);line-height:1.02;letter-spacing:-.06em;max-width:850px;margin:22px auto}.hero h1 em{font-style:normal;color:var(--accent)}.hero p{color:var(--muted);max-width:630px;margin:0 auto;font-size:1.1rem}
+main{padding-bottom:64px}.tool{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:34px auto;max-width:950px}.card{background:rgba(18,26,46,.94);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 18px 50px #0002}.card h2{font-size:1.25rem;margin:0 0 6px}.sub{color:var(--muted);font-size:.92rem;margin:0 0 20px}label{display:block;font-size:.9rem;font-weight:650;margin:14px 0 7px}input,select,textarea{width:100%;padding:12px 13px;background:#0c1426;border:1px solid #34415f;border-radius:11px;color:var(--text);font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--accent)}button{border:0;border-radius:12px;padding:13px 17px;font:inherit;font-weight:800;cursor:pointer;background:var(--accent);color:#102219}button:hover{filter:brightness(1.06)}.primary{width:100%;margin-top:19px}.result{min-height:245px;background:#0c1426;border:1px dashed #3b4a68;border-radius:14px;padding:16px;white-space:pre-wrap;color:#e9efff}.result.empty{color:#8e9bb6}.actions{display:flex;gap:10px;margin-top:12px}.actions button{flex:1}.secondary{background:#283650;color:var(--text)}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0 38px}.feature{padding:20px;border:1px solid var(--line);border-radius:17px;background:#10182b}.feature .emoji{font-size:1.5rem}.feature h3{margin:8px 0 5px;font-size:1rem}.feature p{margin:0;color:var(--muted);font-size:.9rem}.monetize{border:1px solid #355447;background:linear-gradient(120deg,#142a2b,#151a30);padding:25px;border-radius:20px;display:flex;gap:24px;align-items:center;justify-content:space-between}.monetize h2{margin:0 0 7px}.monetize p{margin:0;color:var(--muted);max-width:650px}.monetize a{color:#102219;background:var(--accent);text-decoration:none;padding:12px 15px;border-radius:11px;font-weight:800;white-space:nowrap}.adslot{margin:26px 0;padding:15px;text-align:center;color:#7886a2;border:1px dashed #34415f;border-radius:12px;font-size:.8rem}.foot{border-top:1px solid var(--line);padding:25px 0 40px;color:var(--muted);font-size:.83rem}.foot a{color:var(--accent)}.notice{font-size:.8rem;color:var(--muted);margin-top:12px}
+@media(max-width:720px){.tool{grid-template-columns:1fr}.features{grid-template-columns:1fr}.hero{padding-top:40px}.monetize{align-items:flex-start;flex-direction:column}.monetize a{white-space:normal}.card{padding:19px}}
+</style>
+</head>
+<body>
+<header class="wrap nav"><div class="brand">✦ Post<span>Pilot</span></div><a href="#strumento">Prova gratis ↓</a></header>
+<section class="wrap hero">
+  <span class="pill">✦ Il tuo assistente per i social</span>
+  <h1>Pubblica meglio.<br><em>Perdi meno tempo.</em></h1>
+  <p>Genera idee per post, didascalie e hashtag in pochi secondi. Scegli il tono, descrivi il contenuto e parti da una bozza pronta da personalizzare.</p>
+</section>
+<main class="wrap">
+  <div class="tool" id="strumento">
+    <section class="card">
+      <h2>Genera una didascalia</h2><p class="sub">Strumento gratuito — nessuna registrazione.</p>
+      <label for="topic">Di cosa parla il post?</label><input id="topic" placeholder="Es. una nuova attività, un viaggio, un prodotto">
+      <label for="platform">Piattaforma</label><select id="platform"><option>Instagram</option><option>TikTok</option><option>LinkedIn</option><option>Facebook</option></select>
+      <label for="tone">Stile</label><select id="tone"><option value="friendly">Amichevole e spontaneo</option><option value="professional">Professionale</option><option value="fun">Divertente</option><option value="inspiring">Motivazionale</option></select>
+      <label for="goal">Obiettivo</label><select id="goal"><option value="engage">Ottenere commenti</option><option value="sell">Presentare un prodotto/servizio</option><option value="inform">Informare il pubblico</option><option value="follow">Aumentare i follower</option></select>
+      <button class="primary" id="generate">✨ Crea la mia bozza</button>
+      <p class="notice">Generazione tramite IA: richiede il server configurato seguendo il README.</p>
+    </section>
+    <section class="card">
+      <h2>La tua bozza</h2><p class="sub">Rivedila e rendila personale prima di pubblicarla.</p>
+      <div class="result empty" id="result" aria-live="polite">La tua didascalia apparirà qui…</div>
+      <div class="actions"><button class="secondary" id="copy">Copia testo</button><button class="secondary" id="again">Nuova idea</button></div>
+      <p class="notice" id="status"></p>
+    </section>
+  </div>
+  <div class="adslot">Spazio pubblicitario — qui potrai inserire un annuncio dopo l'approvazione di una rete pubblicitaria.</div>
+  <section class="features">
+    <article class="feature"><div class="emoji">⚡</div><h3>Parti da una bozza</h3><p>Supera il blocco dello scrittore e adatta il testo al tuo stile.</p></article>
+    <article class="feature"><div class="emoji">🎯</div><h3>Un obiettivo chiaro</h3><p>Prepara contenuti pensati per coinvolgere, informare o presentare un'offerta.</p></article>
+    <article class="feature"><div class="emoji">#️⃣</div><h3>Hashtag inclusi</h3><p>Ottieni alcuni hashtag di partenza e scegli quelli pertinenti al tuo pubblico.</p></article>
+  </section>
+  <section class="monetize">
+    <div><h2>Vuoi creare contenuti ancora migliori?</h2><p>In futuro puoi aggiungere una versione Pro con più stili, calendari editoriali e generazione AI reale. Prima valida l'interesse degli utenti: nessun guadagno è garantito.</p></div>
+    <a href="mailto:tuamail@example.com?subject=Interesse%20per%20PostPilot%20Pro">Avvisami della versione Pro</a>
+  </section>
+</main>
+<footer class="wrap foot">
+  <p><strong>PostPilot</strong> — uno strumento indipendente per idee social.</p>
+  <p>Trasparenza: eventuali link affiliati o annunci dovranno essere dichiarati chiaramente. Sostituisci l'indirizzo email dimostrativo prima di pubblicare e aggiungi una privacy policy adeguata se raccogli dati.</p>
+  <p>© <span id="year"></span> PostPilot</p>
+</footer>
+<script>
+const $ = id => document.getElementById(id);
+let lastText = "";
+
+async function makeCaption(){
+ const topic = $("topic").value.trim();
+ if(!topic){$("status").textContent="Scrivi prima l'argomento del post."; $("topic").focus(); return;}
+ if(topic.length > 500){$("status").textContent="Accorcia l'argomento a massimo 500 caratteri."; return;}
+
+ const button = $("generate");
+ button.disabled = true;
+ button.textContent = "⏳ L'IA sta scrivendo...";
+ $("status").textContent = "Attendi qualche secondo.";
+ $("result").textContent = "Sto preparando la tua bozza…";
+ $("result").classList.add("empty");
+
+ try {
+   const response = await fetch("/api/generate", {
+     method: "POST",
+     headers: {"Content-Type":"application/json"},
+     body: JSON.stringify({
+       topic,
+       platform: $("platform").value,
+       tone: $("tone").value,
+       goal: $("goal").value
+     })
+   });
+   const data = await response.json().catch(() => ({}));
+   if(!response.ok) throw new Error(data.error || "Richiesta non riuscita. Riprova più tardi.");
+   if(!data.text) throw new Error("Il modello non ha restituito un testo. Riprova.");
+   lastText = data.text;
+   $("result").textContent = lastText;
+   $("result").classList.remove("empty");
+   $("status").textContent = "Bozza generata dall'IA: rileggila e personalizzala prima di pubblicare.";
+ } catch(error) {
+   $("result").textContent = "Non sono riuscito a generare il testo.";
+   $("status").textContent = error.message + " Se hai appena configurato il sito, controlla il README e la chiave API.";
+ } finally {
+   button.disabled = false;
+   button.textContent = "✨ Crea la mia bozza";
+ }
+}
+$("generate").addEventListener("click", makeCaption);
+$("again").addEventListener("click", makeCaption);
+$("copy").addEventListener("click", async()=>{
+ if(!lastText){$("status").textContent="Crea prima una bozza.";return;}
+ try { await navigator.clipboard.writeText(lastText); $("status").textContent="Testo copiato!"; }
+ catch(e) { $("status").textContent="Seleziona e copia manualmente il testo della bozza."; }
+});
+$("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
